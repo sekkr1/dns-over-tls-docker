@@ -1,0 +1,16 @@
+upstream dns-servers {
+    server    {dns_upstream}:53;
+}
+server {
+    listen 853 ssl;
+    ssl_certificate /ssl/fullchain.pem;
+    ssl_certificate_key /ssl/privkey.pem;
+    ssl_protocols        TLSv1.2 TLSv1.3;
+    ssl_ciphers          HIGH:!aNULL:!MD5;
+        
+    ssl_handshake_timeout    10s;
+    ssl_session_cache        shared:SSL:20m;
+    ssl_session_timeout      4h;
+    proxy_pass dns-servers;
+}
+
