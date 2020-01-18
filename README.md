@@ -12,12 +12,12 @@ Based on the work by [varunsdridharan](https://github.com/varunsridharan/pi-hole
 
 Using the Docker CLI:
 
-`docker run -v /path_to_your_certs:/ssl:ro -p 853:853/tcp -e DNS_UPSTREAM=your_dns_server -d sekkr1/dns-over-tls
+`docker run -v /path_to_your_certs:/ssl:ro -p 853:853/tcp -e DNS_UPSTREAM=your_dns_server -d sekkr1/dns-over-tls`
 
 Using docker-compose:
 
 ```yaml
-dns-over-tls
+dns-over-tls:
     image: sekkr1/dns-over-tls
     container_name: dns-over-tls
     environment:
