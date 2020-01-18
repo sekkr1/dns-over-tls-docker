@@ -1,4 +1,4 @@
-# DNS-over-TLS Server Docker
+# DNS-over-TLS Docker
 
 A DNS-over-TLS server docker to serve as a front to your DNS server.
 
